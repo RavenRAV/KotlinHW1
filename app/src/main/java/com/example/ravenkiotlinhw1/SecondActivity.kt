@@ -1,11 +1,12 @@
 package com.example.ravenkiotlinhw1
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.Contacts.SettingsColumns.KEY
 import android.view.View
 import kotlinx.android.synthetic.main.activity_second.*
+const val KEY_RESULT = "result"
 
 class SecondActivity : AppCompatActivity() {
 
@@ -18,7 +19,7 @@ class SecondActivity : AppCompatActivity() {
 
     fun secondButton(view: View) {
         if (secondEt.text.trim().isNotEmpty()) {
-            getFromIntent("key2")
+            getFromIntent(KEY_RESULT)
         } else {
             Helper().showToast2(this)
         }
@@ -27,6 +28,7 @@ class SecondActivity : AppCompatActivity() {
     private fun getFromIntent(name: String) {
         val intent = Intent(this, MainActivity::class.java)
         intent.putExtra(name, secondEt.text.toString())
-        startActivity(intent)
+        setResult(Activity.RESULT_OK)
+        finish()
     }
 }
