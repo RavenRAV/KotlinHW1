@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Raven KiotlinHW1</string>
+    <string name="go">далее</string>
+    <string name="text">Введите техт</string>
+</resources>
