@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import kotlinx.android.synthetic.main.activity_second.*
+
 const val KEY_RESULT = "result"
 
 class SecondActivity : AppCompatActivity() {
@@ -28,7 +29,7 @@ class SecondActivity : AppCompatActivity() {
     private fun getFromIntent(name: String) {
         val intent = Intent(this, MainActivity::class.java)
         intent.putExtra(name, secondEt.text.toString())
-        setResult(Activity.RESULT_OK)
+        setResult(Activity.RESULT_OK, intent)
         finish()
     }
 }
