@@ -3,11 +3,13 @@ package com.example.ravenkiotlinhw1
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 
 const val KEY = "key"
 const val REQUEST_CODE = 1
+var array = emptyArray<String>()
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,6 +20,7 @@ class MainActivity : AppCompatActivity() {
 
     fun firstButton(view: View) {
         if (firstEt.text.trim().isNotEmpty()) {
+            array += firstEt.text.toString()
             getFromIntent(KEY)
         } else {
             Helper().showToast2(this)
@@ -40,6 +43,11 @@ class MainActivity : AppCompatActivity() {
                 Helper().showToast2(this)
             }
         }
+    }
+
+    fun showData(view: View) {
+        Helper().showToast(this, array.contentToString())
+        Log.d("log", array.contentToString())
     }
 
 }

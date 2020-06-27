@@ -20,6 +20,7 @@ class SecondActivity : AppCompatActivity() {
 
     fun secondButton(view: View) {
         if (secondEt.text.trim().isNotEmpty()) {
+            array += secondEt.text.toString()
             getFromIntent(KEY_RESULT)
         } else {
             Helper().showToast2(this)
